@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Ultimate VPC - sito ufficiale" />
+<title>Ultimate VPC | Official Club</title>
+<style>
+:root{--red:#8f0d18;--dark:#0e0e10;--ink:#1a1a1d;--cream:#f3f0ea;--gold:#f3c428}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--ink)}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+.topline{background:#080809;color:#fff;font-size:12px}.topline .wrap{display:flex;justify-content:flex-end;gap:22px;padding:10px 0}
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ececec}.header-main{height:86px;display:flex;align-items:center;gap:30px}
+.logo{width:62px;height:62px;object-fit:cover;border-radius:8px}.clubname{font-weight:900;font-size:24px}.clubsub{display:block;color:var(--red);font-size:11px;letter-spacing:2px;font-weight:700;margin-top:4px}
+.nav{margin-left:auto;display:flex;gap:24px;align-items:center}.nav a{font-size:13px;font-weight:800;text-transform:uppercase;padding:34px 0 29px;border-bottom:3px solid transparent}.nav a:hover,.nav a.active{color:var(--red);border-color:var(--red)}
+.menu{display:none;margin-left:auto;border:0;background:none;font-size:26px}
+.hero{position:relative;min-height:570px;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.42) 55%,rgba(0,0,0,.2)),radial-gradient(circle at 78% 42%,#a5121e 0,#5a0710 35%,#160205 72%,#090909 100%);overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0 85px,rgba(255,255,255,.03) 86px 87px)}
+.hero .wrap{position:relative;z-index:2;min-height:570px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:30px}.hero-copy{color:#fff;padding:70px 0}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase}.hero h1{font-size:72px;line-height:.95;margin:14px 0 18px;max-width:740px;text-transform:uppercase}.hero p{font-size:18px;line-height:1.6;color:#efefef;max-width:600px}
+.hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}.btn{display:inline-block;padding:14px 20px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}.btn-red{background:var(--red);color:#fff}.btn-white{background:#fff;color:#111}
+.hero-logo{justify-self:end;width:min(390px,80%);filter:drop-shadow(0 28px 50px rgba(0,0,0,.42))}.hero-logo img{border-radius:18px}
+.section{padding:72px 0}.section.alt{background:var(--cream)}.section.black{background:var(--dark);color:#fff}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px;gap:20px}.section-head h2{margin:4px 0 0;font-size:42px;text-transform:uppercase}
+.kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.section.black .kicker{color:var(--gold)}.link-more{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--red)}.section.black .link-more{color:var(--gold)}
+.match-strip{background:#111;color:#fff}.match-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}.match-strip .item{padding:18px 22px;border-right:1px solid #2d2d2d}.match-strip small{display:block;color:#999;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}.match-strip strong{display:block;margin-top:6px;font-size:20px;color:var(--gold)}
+.news-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:18px}.news-card{background:#fff;border:1px solid #ece7df;overflow:hidden}.news-thumb{height:220px;background:linear-gradient(135deg,#220306,#9b101b 60%,#d51d2d);display:flex;align-items:end;padding:20px;color:#fff;font-weight:900;font-size:28px;text-transform:uppercase}.news-card.large .news-thumb{height:360px}.news-body{padding:18px}.news-tag{font-size:10px;font-weight:900;color:var(--red);letter-spacing:1.5px}.news-body h3{margin:8px 0;font-size:23px}.news-body p{margin:0;color:#707070;line-height:1.55}
+.tv-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.video-main,.video-small{position:relative;min-height:340px;background:linear-gradient(140deg,#260308,#7f0c16 50%,#161616)}.video-main{min-height:460px}.video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.84));display:flex;flex-direction:column;justify-content:flex-end;padding:30px}.play{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#5f0610;font-size:24px;margin-bottom:16px}.video-overlay small{color:var(--gold);font-weight:900;letter-spacing:1.6px}.video-overlay h3{font-size:34px;margin:8px 0 0}.video-stack{display:grid;grid-template-rows:1fr 1fr;gap:22px}.video-small{min-height:219px}
+.player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.player-card{background:#fff;border:1px solid #eae6de}.player-photo{height:340px;background:linear-gradient(160deg,#550710,#b21624);display:flex;align-items:flex-end;justify-content:center}.player-photo span{font-size:150px;font-weight:900;color:rgba(243,196,40,.14);line-height:.82}.player-meta{padding:18px}.player-role{font-size:10px;color:var(--red);font-weight:900;letter-spacing:1.5px}.player-name{font-size:28px;font-weight:900;margin:5px 0 14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #eee}.stats div{padding:12px 8px;text-align:center}.stats small{display:block;color:#888;font-size:9px;text-transform:uppercase}.stats strong{display:block;font-size:21px;margin-top:4px}
+.dual{display:grid;grid-template-columns:1.35fr .65fr;gap:24px}.match-card{background:#fff;border-top:5px solid var(--red);box-shadow:0 10px 30px rgba(0,0,0,.06)}.match-card-top{display:flex;justify-content:space-between;padding:16px 20px;background:#171717;color:#fff;font-size:11px}.match-card-top span{color:var(--gold)}.match-center{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;padding:30px 22px}.team{display:flex;align-items:center;gap:14px;font-weight:900;font-size:24px}.team.home{justify-content:flex-end}.team img,.crest-ph{width:76px;height:76px;border-radius:10px;object-fit:cover}.crest-ph{display:grid;place-items:center;background:#eee;color:#aaa}.vs{text-align:center}.vs strong{display:block;color:var(--red);font-size:48px}.vs small{color:#777}
+.table{background:#fff;border:1px solid #e9e4dc}.row{display:grid;grid-template-columns:38px 1fr 44px;align-items:center;padding:13px 12px;border-bottom:1px solid #eee;font-size:14px}.row.head{font-size:10px;color:#888;text-transform:uppercase;font-weight:800}.row.us{background:var(--red);color:#fff}.row img{width:24px;height:24px;border-radius:5px;display:inline-block;vertical-align:middle;margin-right:7px}
+.ratings-box{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.rating{background:#fff;border:1px solid #e9e4dc;padding:18px}.rating-top{display:flex;justify-content:space-between}.rating-name{font-weight:900}.vote{font-size:28px;font-weight:900;color:var(--red)}.rating p{color:#737373;font-size:13px;line-height:1.45;margin-bottom:0}
+footer{background:#0d0d0f;color:#fff}.footer-main{display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:40px;padding:52px 0}.footer-brand{display:flex;gap:14px;align-items:center}.footer-brand img{width:72px;height:72px;border-radius:10px}.footer-brand strong{font-size:24px}.footer-brand span{display:block;color:#aaa;font-size:12px;margin-top:4px}.footer-col h4{font-size:12px;text-transform:uppercase;color:var(--gold);letter-spacing:1.4px;margin:0 0 14px}.footer-col a{display:block;color:#c5c5c5;font-size:13px;margin:9px 0}.footer-bottom{border-top:1px solid #252525;padding:18px 0;color:#777;font-size:12px}
+@media(max-width:980px){.nav{display:none;position:absolute;top:86px;left:0;right:0;background:#fff;padding:18px 20px;box-shadow:0 12px 24px rgba(0,0,0,.1);flex-direction:column;align-items:flex-start}.nav.open{display:flex}.nav a{padding:8px 0}.menu{display:block}.hero .wrap{grid-template-columns:1fr}.hero-logo{justify-self:center;width:260px;order:-1;padding-top:45px}.hero-copy{padding-top:20px}.hero h1{font-size:58px}.match-strip .wrap{grid-template-columns:1fr 1fr}.news-grid{grid-template-columns:1fr 1fr}.news-card.large{grid-column:1/-1}.tv-grid,.dual{grid-template-columns:1fr}.player-grid{grid-template-columns:1fr 1fr}.ratings-box{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.wrap{width:min(100% - 28px,1240px)}.clubname{font-size:19px}.logo{width:54px;height:54px}.header-main{height:76px}.hero h1{font-size:46px}.hero p{font-size:16px}.match-strip .wrap{grid-template-columns:1fr}.news-grid,.player-grid,.ratings-box{grid-template-columns:1fr}.section{padding:56px 0}.section-head h2{font-size:34px}.match-center{grid-template-columns:1fr;gap:20px;text-align:center}.team,.team.home{justify-content:center}.vs{order:2}.team.away{order:3}.footer-main{grid-template-columns:1fr}.topline{display:none}}
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span>Ultimate VPC Official</span><span>YouTube</span></div></div>
+<header class="site-header"><div class="wrap header-main">
+<img class="logo" src="logo.jpeg" alt="Logo Ultimate VPC">
+<div><div class="clubname">ULTIMATE VPC</div><span class="clubsub">OFFICIAL CLUB</span></div>
+<button class="menu" aria-label="Apri menu">☰</button>
+<nav class="nav"><a class="active" href="#">Home</a><a href="#rosa">Rosa</a><a href="#partite">Partite</a><a href="#pagelle">Pagelle</a><a href="#classifica">Classifica</a><a href="#statistiche">Statistiche</a><a href="#club-tv">Club TV</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<div class="hero-copy"><span class="eyebrow">ULTIMATE VPC • PRO CLUBS</span><h1>Una squadra.<br>Una storia da scrivere.</h1><p>Risultati, rosa, statistiche, pagelle e contenuti ufficiali di Ultimate VPC.</p><div class="hero-actions"><a class="btn btn-red" href="#partite">Match Center</a><a class="btn btn-white" href="#club-tv">Club TV</a></div></div>
+<div class="hero-logo"><img src="logo.jpeg" alt="Ultimate VPC"></div>
+</div></section>
+
+<section class="match-strip"><div class="wrap">
+<div class="item"><small>Prossima partita</small><strong>Da definire</strong></div><div class="item"><small>Ultimo risultato</small><strong>—</strong></div><div class="item"><small>Posizione</small><strong>—</strong></div><div class="item"><small>Punti</small><strong>—</strong></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Ultime</span><h2>Notizie</h2></div><a class="link-more" href="#">Vedi tutte →</a></div>
+<div class="news-grid">
+<article class="news-card large"><div class="news-thumb">Ultimate VPC</div><div class="news-body"><span class="news-tag">CLUB</span><h3>Il nuovo sito ufficiale di Ultimate VPC</h3><p>Il punto di riferimento per risultati, pagelle, statistiche, video e vita del club.</p></div></article>
+<article class="news-card"><div class="news-thumb">Matchday</div><div class="news-body"><span class="news-tag">MATCH</span><h3>Prepartita e convocazioni</h3></div></article>
+<article class="news-card"><div class="news-thumb">Spogliatoio</div><div class="news-body"><span class="news-tag">TEAM</span><h3>Le parole del mister</h3></div></article>
+</div></div></section>
+
+<section class="section black" id="club-tv"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Club TV</span><h2>Dentro lo spogliatoio</h2></div><a class="link-more" href="#">Canale YouTube →</a></div>
+<div class="tv-grid"><div class="video-main"><div class="video-overlay"><div class="play">▶</div><small>ULTIMO VIDEO</small><h3>Parola al Mister</h3></div></div><div class="video-stack"><div class="video-small"><div class="video-overlay"><small>HIGHLIGHTS</small><h3>Ultima partita</h3></div></div><div class="video-small"><div class="video-overlay"><small>BACKSTAGE</small><h3>Dietro le quinte</h3></div></div></div></div>
+</div></section>
+
+<section class="section" id="rosa"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Squadra</span><h2>Prima squadra</h2></div><a class="link-more" href="#">Vedi tutta la rosa →</a></div>
+<div class="player-grid">
+<article class="player-card"><div class="player-photo"><span>01</span></div><div class="player-meta"><div class="player-role">PORTIERE</div><div class="player-name">Giocatore</div><div class="stats"><div><small>Presenze</small><strong>0</strong></div><div><small>Clean sheet</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+<article class="player-card"><div class="player-photo"><span>10</span></div><div class="player-meta"><div class="player-role">CENTROCAMPISTA</div><div class="player-name">Giocatore</div><div class="stats"><div><small>Presenze</small><strong>0</strong></div><div><small>Assist</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+<article class="player-card"><div class="player-photo"><span>09</span></div><div class="player-meta"><div class="player-role">ATTACCANTE</div><div class="player-name">Giocatore</div><div class="stats"><div><small>Presenze</small><strong>0</strong></div><div><small>Gol</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+</div></div></section>
+
+<section class="section alt" id="partite"><div class="wrap dual">
+<div><div class="section-head"><div><span class="kicker">Match Center</span><h2>Prossima partita</h2></div></div><article class="match-card"><div class="match-card-top"><span>PRO CLUBS • CAMPIONATO</span><strong>DATA DA DEFINIRE</strong></div><div class="match-center"><div class="team home"><span>ULTIMATE VPC</span><img src="logo.jpeg" alt=""></div><div class="vs"><small>CALCIO D'INIZIO</small><strong>VS</strong><span>--:--</span></div><div class="team away"><div class="crest-ph">?</div><span>AVVERSARIO</span></div></div></article></div>
+<div id="classifica"><div class="section-head"><div><span class="kicker">Campionato</span><h2>Classifica</h2></div></div><div class="table"><div class="row head"><span>#</span><span>Squadra</span><span>PT</span></div><div class="row us"><span>1</span><span><img src="logo.jpeg" alt="">Ultimate VPC</span><span>0</span></div><div class="row"><span>2</span><span>—</span><span>0</span></div><div class="row"><span>3</span><span>—</span><span>0</span></div><div class="row"><span>4</span><span>—</span><span>0</span></div><div class="row"><span>5</span><span>—</span><span>0</span></div></div></div>
+</div></section>
+
+<section class="section" id="statistiche"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Numeri</span><h2>Statistiche</h2></div><a class="link-more" href="#">Statistiche complete →</a></div>
+<div class="player-grid">
+<article class="player-card"><div class="player-meta"><div class="player-role">TOP SCORER</div><div class="player-name">Da definire</div><div class="stats"><div><small>Gol</small><strong>0</strong></div><div><small>Pres.</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+<article class="player-card"><div class="player-meta"><div class="player-role">TOP ASSIST</div><div class="player-name">Da definire</div><div class="stats"><div><small>Assist</small><strong>0</strong></div><div><small>Pres.</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+<article class="player-card"><div class="player-meta"><div class="player-role">MVP</div><div class="player-name">Da definire</div><div class="stats"><div><small>MVP</small><strong>0</strong></div><div><small>Pres.</small><strong>0</strong></div><div><small>Media</small><strong>—</strong></div></div></div></article>
+</div></div></section>
+
+<section class="section alt" id="pagelle"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Pagelle</span><h2>Ultima partita</h2></div><a class="link-more" href="#">Tutte le pagelle →</a></div>
+<div class="ratings-box"><div class="rating"><div class="rating-top"><span class="rating-name">Giocatore</span><span class="vote">7.5</span></div><p>Commento della prestazione da inserire dopo la partita.</p></div><div class="rating"><div class="rating-top"><span class="rating-name">Giocatore</span><span class="vote">7</span></div><p>Commento della prestazione da inserire dopo la partita.</p></div><div class="rating"><div class="rating-top"><span class="rating-name">Giocatore</span><span class="vote">6.5</span></div><p>Commento della prestazione da inserire dopo la partita.</p></div><div class="rating"><div class="rating-top"><span class="rating-name">Giocatore</span><span class="vote">8</span></div><p>MVP della gara. Commento da inserire.</p></div></div>
+</div></section>
+
+<footer><div class="wrap footer-main"><div class="footer-brand"><img src="logo.jpeg" alt="Ultimate VPC"><div><strong>ULTIMATE VPC</strong><span>Official Club Website</span></div></div><div class="footer-col"><h4>Squadra</h4><a href="#rosa">Rosa</a><a href="#statistiche">Statistiche</a><a href="#pagelle">Pagelle</a></div><div class="footer-col"><h4>Stagione</h4><a href="#partite">Partite</a><a href="#classifica">Classifica</a></div><div class="footer-col"><h4>Media</h4><a href="#club-tv">Club TV</a><a href="#">YouTube</a></div></div><div class="wrap footer-bottom">© 2026 Ultimate VPC. Tutti i diritti riservati.</div></footer>
+<script>const m=document.querySelector('.menu'),n=document.querySelector('.nav');m.addEventListener('click',()=>n.classList.toggle('open'));</script>
+</body></html>
